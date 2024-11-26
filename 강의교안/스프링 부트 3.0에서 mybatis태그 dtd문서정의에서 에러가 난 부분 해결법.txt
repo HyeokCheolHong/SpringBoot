@@ -1,0 +1,16 @@
+1.어플리케이션 실행 및 쿼리 실행에 문제는 없으나 매퍼 XML 파일을 오픈했을 때
+위 이미지 처럼 문서 형식 선언 태그 <!DOCTYPE /> 내부에 URL
+
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" <-- 부분에 빨간줄
+컴파일 에러가 발생하는 경우
+XML 파일을 열 때 해당 dtd 파일을 다운로드 하지 못해 발생할 수 있는데
+다운로드 하도록 이클립스 상 설정을 변경해주면 된다. 
+
+윈도우 : Windows → Preferences → XML (Wild Web Developer)
+맥 : Eclipse → Settings → XML (Wild Web Developer) 
+
+XML (Wild Web Developer) 설정 메뉴로 이동한 뒤
+
+□ Download external resources like referenced DTD, XSD 
+
+체크하고 적용시키면 눈엣가시 같은 에러가 사라진다.

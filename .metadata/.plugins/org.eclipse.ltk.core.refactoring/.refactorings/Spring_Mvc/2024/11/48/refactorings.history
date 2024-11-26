@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;WEB-INF&apos; to &apos;webapp&apos;&#x0D;&#x0A;- Original project: &apos;Spring_Mvc&apos;&#x0D;&#x0A;- Destination element: &apos;webapp&apos;&#x0D;&#x0A;- Original element: &apos;WEB-INF&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move folder" element1="src/main/WEB-INF" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1732605345654" target="src/main/webapp" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,13 @@
+package net.daum;
+
+// 오라클 연결 테스트 코드 클래스
+public class OracleConTest {
+	private static final String DRIVER = "oracle.jdbc.OracleDriver";
+	// oracle.jdbc는 패키지명, OracleDriver는 오라클 jdbc 드라이버 클래스명
+	
+	private static final String URL = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	// 오라클 접속주소 / 1521 : 오라클 연결 포트번호 / xe : 전역 데이터베이스 명
+	
+	private static final String USER = "fintech";
+	private static final String PW = "56789";
+}
