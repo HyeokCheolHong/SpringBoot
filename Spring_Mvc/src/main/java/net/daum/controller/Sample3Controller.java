@@ -13,7 +13,6 @@ public class Sample3Controller {
 	@RequestMapping(value="/namePrice", method=RequestMethod.GET)
 	// namePrice 매핑주소 등록, GET으로 접근하는 매핑주소를 처리
 	public ModelAndView namePrice() {
-		// namePrice가 URL에 입력되면 해당 페이지를 읽는다.
 		ProductVO p = new ProductVO("노트북", 2500000);
 		
 		ModelAndView pm = new ModelAndView();
