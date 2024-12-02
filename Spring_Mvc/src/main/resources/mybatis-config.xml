@@ -13,5 +13,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	  
 	  <typeAlias type="net.daum.vo.BoardVO" alias="board" />
 	  
+	  <!-- 2024-12-02 댓글 작성 DB 적용을 위한 코드 -->
+	  <typeAlias type="net.daum.vo.ReplyVO" alias="reply"/>
 	</typeAliases>
 </configuration>	
