@@ -1,0 +1,14 @@
+package net.daum.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import net.daum.service.BoardService;
+
+@Controller
+// @Controller 애노테이션을 설정함으로써 스프링에서 컨트롤러로 인식한다.
+public class BoardController {
+	
+	@Autowired
+	private BoardService boardService;
+}

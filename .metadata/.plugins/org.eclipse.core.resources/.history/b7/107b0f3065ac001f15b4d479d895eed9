@@ -1,0 +1,7 @@
+package net.daum;
+
+
+@SpringBootTest
+public class MemberDAOTest {
+	
+}

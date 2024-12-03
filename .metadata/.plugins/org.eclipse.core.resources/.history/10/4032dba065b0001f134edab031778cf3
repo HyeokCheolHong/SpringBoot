@@ -1,0 +1,6 @@
+package net.daum.dao;
+
+// 2024-12-02 댓글 작성하는 DAO 생성
+public class ReplyDAOImpl implements ReplyDAO {
+	
+}

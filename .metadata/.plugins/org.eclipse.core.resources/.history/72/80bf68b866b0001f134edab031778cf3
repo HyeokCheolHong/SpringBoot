@@ -1,0 +1,23 @@
+package net.daum.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import net.daum.dao.ReplyDAO;
+import net.daum.vo.ReplyVO;
+
+// 2024-12-02 댓글 ServiceImple 작성
+
+@Service
+public class ReplyServiceImpl implements ReplyService {
+	
+	@Autowired
+	private ReplyDAO replyDao;
+
+	@Override
+	public void addReply(ReplyVO vo) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

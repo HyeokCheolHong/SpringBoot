@@ -1,0 +1,33 @@
+package net.daum.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import net.daum.vo.SampleVO;
+
+@RestController
+// @RestController 애너테이션으로 뷰페이지를 직접 만들지 않고도 원하는 문자열 객체, JSON, XMl 데이터를 만들 수 있다.
+
+@RequestMapping("/rest")
+// Rest라는 컨트롤러 자체 매핑주소 등록
+public class Sample6Controller {
+	
+	@GetMapping("/beginRest")
+	public String begin() {
+		return "Rest 시작";
+	}
+	
+	@RequestMapping("/sendVO")
+	public SampleVO sendVO() {
+		// 메서드 리턴타입이 SampleVo 빈타입이면 해당 클래스 변수명이 JSON데이터의 키 이름이 된다.
+		
+		SampleVO vo = new SanpleVO();
+		vo.setFirstName("홍");
+		vo.setLastName("길동");
+		vo.setMno(7);
+		
+		return vo;
+		
+	}
+}

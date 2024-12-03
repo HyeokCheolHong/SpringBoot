@@ -1,0 +1,60 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+
+<!-- 2024-12-03 댓글 수정 View 작성 HomeController -->
+
+
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ajax 댓글 연습</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+			#modDiv{ /* 댓글 수정폼 */ 
+				width:300px;
+				height:100px;
+				background-color:gray;
+				position: absolute;
+				top:50%;
+				left:50%;
+				margin-top:-50px;
+				margin-left:-150px;
+				padding:10px;
+				z-index:1000;
+				/* position absolute나 fixed로 설정된 곳에서 사용한다 */
+				/* 이 속성은 요소가 겹쳐지는 순서를 제어할 수 있다. 값이 큰것이 먼저 나온다. */
+			}
+		</style>
+	</head>
+	<body>
+		<%-- 댓글 수정 화면 --%>
+		<div id="modDiv" style="display:none;"> <%-- display:none; css는 해당 요소 안보이게 한다. --%>
+			<div class="modal-title"></div> <%-- 댓글 번호 --%>
+			<div>
+				<textarea rows="3" cols="30" id="replytext"></textarea>
+			</div>
+			<div>
+				<button type="button" id="replyModBtn">댓글수정</button>
+				<button type="button" id="replyDelBtn">댓글삭제</button>
+				<button type="button" id="closeBtn" onClick="modDivClose();">취소</button>
+			</div>
+		</div>
+		
+		<h2>Ajax 댓글 연습페이지</h2>
+		<div>
+			<div>
+				댓글 작성자 : <input type="text" name="replyer" id="newReplyWriter" />
+			</div> <br/>
+			<div>
+				댓글 내용 : <textarea rows="5" cols="30" name="replytext" id="newReplyText"></textarea>
+			</div> <br/>
+			<button type="button" id="replyAddBtn">댓글등록</button>
+		</div> <br/> <hr/> <br/>
+		
+		<%-- 댓글 목록 화면 --%>
+		<ul id="replies">
+			
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+package net.daum.dao;
+
+import net.daum.vo.ReplyVO;
+
+// 2024-12-02 댓글 작성하는 DAO 생성
+public interface ReplyDAO {
+
+	void addReply(ReplyVO vo);
+
+}

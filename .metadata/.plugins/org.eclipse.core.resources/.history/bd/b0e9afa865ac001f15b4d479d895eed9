@@ -1,0 +1,17 @@
+package net.daum.dao;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+// Spring에서 @Repository 애노테이션을 설정해야 DAO를 인식한다 
+public class MemberDAOImpl implements MemberDAO {
+	
+	@Autowired // 자동 의존석 주입(DI)
+	private SqlSession sqlSession;
+	// sqlSession은 mybatis 쿼리문 수행
+	
+	// 회원 저장
+	
+}

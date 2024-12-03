@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2024-12-02 댓글 작성을 위한 xml 파일 생성 -->
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- mybatis mapper DTD문서 정의 태그 -->
+
+<!-- 2024-11-28 Board xml 작성 -->
+<mapper namespace="Reply">
+
+</mapper>

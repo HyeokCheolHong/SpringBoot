@@ -1,0 +1,7 @@
+package net.daum.service;
+
+// 2024-12-02 댓글 Service 코드 작성
+
+public interface ReplyService {
+
+}

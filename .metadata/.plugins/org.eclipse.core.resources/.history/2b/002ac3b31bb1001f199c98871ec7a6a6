@@ -1,0 +1,21 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+
+<!-- 2024-12-03 댓글 수정 View 작성 HomeController -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ajax 댓글 연습</title>
+		<style>
+			#modDiv{ /* 댓글 수정폼 */ 
+				width:300px;
+				height:100px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>

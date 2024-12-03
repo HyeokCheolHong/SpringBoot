@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- mybatis mapper DTD문서 정의 태그 -->
+
+<mapper namespace="Board">
+<!-- mapper namespace 명을 Member로 할당 -->
+<!-- mybatis에서 쿼리문을 다루는 태그를 mapper 태그라고 한다. -->
+
+
+
+</mapper>
