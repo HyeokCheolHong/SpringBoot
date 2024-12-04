@@ -1,9 +1,0 @@
-package net.daum.dao;
-
-import org.springframework.stereotype.Repository;
-
-@Repository
-// Spring에서 @Repository 애노테이션을 설정해야 DAO를 인식한다 
-public class MemberDAOImpl implements MemberDAO {
-	
-}

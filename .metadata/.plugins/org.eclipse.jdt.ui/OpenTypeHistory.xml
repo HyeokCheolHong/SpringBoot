@@ -2,5 +2,10 @@
 <typeInfoHistroy>
     <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{MemberDAO.java[MemberDAO" modifiers="513" timestamp="1732673885131"/>
     <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{BoardService.java[BoardService" modifiers="513" timestamp="1732855452175"/>
-    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{ReplyService.java[ReplyService" modifiers="513" timestamp="1733114056453"/>
+    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{ReplyService.java[ReplyService" modifiers="513" timestamp="1733189005154"/>
+    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{MessageDAO.java[MessageDAO" modifiers="513" timestamp="1733279141061"/>
+    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{PointDAO.java[PointDAO" modifiers="513" timestamp="1733285603183"/>
+    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{MessageService.java[MessageService" modifiers="513" timestamp="1733278695860"/>
+    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{GongjiDAO.java[GongjiDAO" modifiers="513" timestamp="1733297626708"/>
+    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{GongjiService.java[GongjiService" modifiers="513" timestamp="1733297651212"/>
 </typeInfoHistroy>

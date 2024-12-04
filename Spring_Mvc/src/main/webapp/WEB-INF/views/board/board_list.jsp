@@ -7,6 +7,19 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>스프링 게시판 목록</title>
+		
+		<!-- 2024-12-04 댓글추가 코드관련 스타일 -->
+		<style>
+			strong.listReply_count{
+				color:red;
+				background:yellow;
+				font-size:12px;
+				border-radius:7px;
+				padding:1px;
+				box-shadow:2px 2px 2px orange;
+			}
+		</style>
+		
 	</head>
 	<body>
 		<table border="1">
@@ -29,6 +42,11 @@
 							<b><a href="/board/board_cont?bno=${b.bno}&page=${page}">${b.title}</a></b>
 							<!-- board_cont?bno=번호&page=쪽번호 &기호로 구분해서 bno와 page 각 파라미터 이름에 값을 담아서 get방식으로 전달한다. -->
 							<!-- page=쪽번호를 전달하는 이유는 페이징 목록에서 책갈피 기능 구현 때문이다. -->
+							
+							<!-- 게시판 댓글 개수 카운트 추가 관련 코드 작성 -->
+							<c:if test="${b.replycnt != 0 }">
+								&nbsp;&nbsp;<strong class="listReply_count">[댓글 개수 : ${b.replycnt} 개]</strong>
+							</c:if>
 						</td>
 						<th>${b.writer}</th>
 						<th>${b.viewcnt}</th>

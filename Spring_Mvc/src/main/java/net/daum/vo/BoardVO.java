@@ -16,6 +16,10 @@ public class BoardVO {
 	private int viewcnt; // 조회수
 	private String regdate; // 등록날짜
 	
+	// 2024-12-04 댓글 개수 카운트 가능한 코드 추가 작업
+	private int replycnt; // 고객의 추가요구사항이 발생해서 댓글수를 카운터해서 저장할 변수
+	// 2024-12-04 여기까지
+	
 	// 페이징(쪽 나누기) 관련 변수
 	private int startrow; // 시작 행 번호
 	private int endrow; // 끝행 번호

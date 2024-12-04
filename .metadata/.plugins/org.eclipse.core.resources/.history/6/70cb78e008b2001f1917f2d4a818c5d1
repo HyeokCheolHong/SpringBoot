@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2024-12-02 댓글 작성을 위한 xml 파일 생성 -->
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- mybatis mapper DTD문서 정의 태그 -->
+
+<!-- 2024-11-28 Board xml 작성 -->
+<mapper namespace="Reply">
+
+	<!-- 댓글추가 -->
+	<insert id="reply_in" parameterType="reply">
+		insert into tbl_reply (rno, bno, replyer, replytext, regdate)
+		values(rno_seq.nextval, #{bno}, #{replyer}, #{replytext}, sysdate)
+	</insert>
+	
+	<!-- 게시판 번호에 해당하는 댓글 목록 -->
+	<select id="reply_list" parameterType="int" resultType="net.daum.vo.ReplyVO">
+	<!-- parameterType은 생략가능함. resultType은 생략불가 
+	이 속성값으로 mybatis-config.xml에서 설정한 ReplyVO빈 클래스 객체 별칭명을 사용하지 않으면 풀패키지 경로인 net.daum.vo.ReplyVO를 입력해야함 -->
+		
+		SELECT * FROM tbl_reply WHERE bno = #{bno} ORDER BY rno DESC
+	</select>
+
+	<!-- 2024-12-03 댓글 수정 SQL 작성 -->
+	<update id="reply_edit">
+		update tbl_reply set replytext=#{replytext}, updatedate=sysdate where rno=#{rno}
+	</update>
+	
+	<!-- 2024-12-03 댓글 삭제 SQL 작성 -->
+	<delete id="reply_del">
+		delete from tbl_reply where rno=#{rno}
+	</delete>
+	
+	<!-- 2024-12-04 댓글 카운트 SQL 작성 -->
+</mapper>

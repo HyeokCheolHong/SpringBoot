@@ -33,7 +33,6 @@ INDEX VERSION 1.134+C:\Users\hor52\OneDrive\Study\KGITBank\SpringBoot\.metadata\
 595479180.index
 1592042247.index
 2792653175.index
-3040635944.index
 2049100351.index
 1329907565.index
 122461542.index

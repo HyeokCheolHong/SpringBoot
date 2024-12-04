@@ -1,0 +1,10 @@
+package net.daum.dao;
+
+import org.springframework.stereotype.Repository;
+
+//2024-12-04 스프링 AOP와 트랜잭션 실습을 위한 코드
+
+@Repository // @Repository 애노테이션을 설정해야 스프링에서 DAO로 인식한다.
+public class MessageDAOImpl implements MessageDAO {
+	
+}

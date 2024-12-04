@@ -1,8 +1,0 @@
---tbl_member8테이블 생성
-create table tbl_member8(
-	userid varchar2(50) primary key, --회원 아이디
-	userpw varchar2(100) not null, -- 회원 비밀번호
-	username varchar2(20) not null, -- 회원 이름
-	email varchar2(100), -- 회원 이메일
-	regdate date default sysdate -- 가입날짜
-);

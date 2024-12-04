@@ -17,4 +17,7 @@ public interface ReplyDAO {
 	// 2024-12-03 댓글 삭제관련 코드작성
 	void removeReply(int rno);
 
+	// 2024-12-04 댓글 카운트 관련 코드작성
+	int getBno(int rno);
+
 }

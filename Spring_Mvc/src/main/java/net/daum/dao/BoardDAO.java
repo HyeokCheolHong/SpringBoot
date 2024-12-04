@@ -24,5 +24,8 @@ public interface BoardDAO {
 	
 	//2024-11-29 게시판 삭제하기 코드 작성
 	void delboard(int bno);
+
+	// 2024-12-04 댓글 작성 카운트 추가 작업
+	void updateReplyCnt(int bno, int count);
 	
 }

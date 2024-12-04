@@ -38,10 +38,16 @@ public class ReplyDAOImpl implements ReplyDAO {
 		// reply_edit는 mybatis에서 설정하는 유일 아이디명
 	}
 
-	// 2024-12-03 댓글 삭제관려 코드작성
+	// 2024-12-03 댓글 삭제관련 코드작성
 	@Override
 	public void removeReply(int rno) {
 		this.sqlSession.delete("reply_del", rno);
+	}
+
+	// 2024-12-04 댓글 카운트 관련 코드 작성
+	@Override
+	public int getBno(int rno) {
+		return this.sqlSession.selectOne("reply_bno", rno);
 	}
 	
 

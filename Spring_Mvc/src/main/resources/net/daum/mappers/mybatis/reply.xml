@@ -33,5 +33,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from tbl_reply where rno=#{rno}
 	</delete>
 	
-	
+	<!-- 2024-12-04 댓글 카운트관련 SQL 작성 -->
+	<!-- 댓글이 삭제 되기 전 댓글 번호를 기준으로 게시판 번호 알아내기 -->
+	<select id="reply_bno" resultType="int">
+		select bno from tbl_reply where rno=${rno}
+	</select>
 </mapper>

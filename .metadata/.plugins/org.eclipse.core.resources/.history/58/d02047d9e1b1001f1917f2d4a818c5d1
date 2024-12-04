@@ -1,0 +1,9 @@
+package net.daum.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/message") // 컨트롤러 자체 매핑주소 등록
+public class MessageController {
+
+}

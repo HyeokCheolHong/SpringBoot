@@ -1,5 +1,10 @@
-<!-- 2024-11-29 게시판 내용 작성을 위한 코드 -->
+<!-- 2024-12-03 댓글이 포함된 게시판 -->
 <%@ page contentType="text/html; charset=UTF-8"%>
+
+<!-- 2024-12-04 댓글 추가관련 taglib추가 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -46,6 +51,16 @@
         padding: 10px;
         z-index: 1000; /* 요소 겹침 순서 제어 */
     	}
+    	
+    	/* 2024-12-04 댓글 카운트 span css 속성 코드 */
+    	span.reply_color {
+    		color:red;
+    		background:gold;
+    		font-size:20px;
+    		border-radius:10px;
+    		padding:5px;
+    		box-shadow:5px 5px 5px gray;
+    	}
 		</style>
 		
 		
@@ -64,8 +79,7 @@
 		  	z-index:1000; /* position이 absolute나 fixed로 설정된 곳에서 사용한다. 이 속성은 요소가 겹쳐지는 순서를 제어할 수 있다. 값이 큰것이 먼저 나온다. */
 		}
 		 -->
-		
-</style>
+	
 	</head>
 	<body>
 		<form method="post" role="form">
@@ -118,6 +132,12 @@
 				<button type="button" id="closeBtn" onClick="modDivClose();">취소</button>
 			</div>
 		</div>
+		
+		<!-- 2024-12-04 댓글 카운트 관련 추가 코드작업 -->
+		<c:if test="${bc.replycnt != 0}">
+			[댓글 개수 : ]<span class="reply_color">${bc.replycnt} 개</span>	
+		</c:if>
+		<!-- 2024-12-04 댓글 카운트 관련 추가 코드작업 -->
 		
 		<h2>Ajax 댓글 연습페이지</h2>
 		<div>

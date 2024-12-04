@@ -20,6 +20,8 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="replyer"/>
+			<item value="modal"/>
 			<item value="mybatis"/>
 			<item value="&lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;"/>
 			<item value="star"/>
