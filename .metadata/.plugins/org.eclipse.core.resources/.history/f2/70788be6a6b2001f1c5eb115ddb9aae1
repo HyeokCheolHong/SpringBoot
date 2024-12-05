@@ -1,0 +1,14 @@
+package net.daum.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import net.daum.dao.GongjiTeacherDAO;
+
+//2024-12-05 문제) 공지사항 만들기 정답
+
+@Service
+public class GongjiTeacherServiceImpl implements GongjiTeacherService {
+	@Autowired
+	private GongjiTeacherDAO gongjiTeacherDAO;
+}

@@ -129,3 +129,28 @@ create sequence gno_seq
 	
 -- gno_seq 시퀀스 번호 확인
 	select gno_seq.nextval as "공지 번호" from dual;
+	
+
+-- 2024-12-05 문제) 공지사항 만들기 정답
+create table tbl_gongji_teacher(
+	gno number(38) primary key, -- 공지번호
+	gname varchar2(50) not null, -- 공지작성자
+	gtitle varchar2(200) not null, -- 공지제목
+	gcont varchar2(4000) not null, -- 공지내용
+	ghit number(38) default 0, -- 공지 조회수
+	gdate date -- 공지 작성일자
+);
+
+alter table tbl_gongji_teacher modify gdate date default sysdate;
+
+select * from tbl_gongji_teacher order by gno asc;
+
+-- 2024-1204 문제) 공지사항 만들기 정답 tbl_gongji_teacher 시퀀스 생성
+create sequence gno_seq_teacher
+	start with 1
+	increment by 1
+	nocache
+	nocycle;
+	
+-- gno_seq 시퀀스 번호 확인
+	select gno_seq_teacher.nextval as "공지 번호" from dual;

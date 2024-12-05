@@ -1,0 +1,7 @@
+package net.daum.service;
+
+//2024-12-04 문제) 공지사항 만들기
+
+public interface GongjiService {
+
+}

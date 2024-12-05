@@ -1,0 +1,21 @@
+package net.daum.dao;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import net.daum.vo.GongjiTeacherVO;
+
+//2024-12-05 문제) 공지사항 만들기 정답
+
+@Repository
+public class GongjiTeacherDAOImpl implements GongjiTeacherDAO {
+	
+	@Autowired
+	private SqlSession sqlSession;
+
+	@Override
+	public void insert(GongjiTeacherVO g) {
+		this.sqlSession.insert("gongji_save", g);
+	}
+}

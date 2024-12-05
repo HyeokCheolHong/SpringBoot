@@ -1,0 +1,73 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			function gongji_check() {
+				if($.trim($("#gongji_writer").val()) == "") {
+					// alert("글쓴이를 입력하세요");
+					$("#error_gongji_writer").html("<font size='1' color='red'>글쓴이를 입력하세요</font>");
+					$("#gongji_writer").val("").focus();
+					
+					return false;
+				}else { // 글쓴이를 입력한 경우
+					// 에러메시지 지우기
+					$("#error_gongji_writer").text("");
+				}
+				
+				if($.trim($("#gongji_title").val()) == "") {
+					// alert("제목을 입력하세요");
+					$("#error_gongji_title").html("<font size='1' color='red'>제목을 입력하세요</font>");
+					$("#gongji_title").val("").focus();
+					
+					return false;
+				}else { // 제목을 입력한 경우
+					// 에러메시지 지우기
+					$("#error_gongji_title").text("");
+				}
+				
+				if($.trim($("#gongji_content").val()) == "") {
+					// alert("내용 입력하세요");
+					$("#error_gongji_content").html("<font size='1' color='red'>내용을 입력하세요</font>");
+					$("#gongji_content").val("").focus();
+					
+					return false;
+				}else { // 내용을 입력한 경우
+					// 에러메시지 지우기
+					$("#error_gongji_content").text("");
+				}
+				
+			}
+	
+			function gongji_reset() {
+				$("#gongji_writer").focus(); // 글쓴이 입력필드로 포커스 이동
+				$("error_gongji_writer").text(""); // 글쓴이 에러메시지 초기화
+				$("error_gongji_title").text(""); // 제목 에러메시지 초기화
+				$("error_gongji_content").text(""); // 내용 에러메시지 초기화
+			}
+		</script>
+	</head>
+	<body>
+		<h2>공지사항 입력폼</h2>
+		<form method="post" onsubmit="return gongji_check();">
+			<%-- action속성을 생략하면 이전 매핑주소인 g_wirte_gongji가 공지 저장 매핑주소가 된다. 동일 매핑주소 구분은 메서드 방식으로 구분한다 --%>
+			<label for="gname">공지 작성자 : </label>
+			<input type="text" name="gname" id="gname" size="14" /> <br/>
+			
+			<label for="gtitle">공지 제목 : </label>
+			<input type="text" name="gtitle" id="gtitle" size="14" /> <br/>
+			
+			<label for="gcont">공지 내용 : </label>
+			<textarea name="gcont" id="gcont" rows="10" cols="36" ></textarea>
+			
+			<button type="submit" >저장</button>
+			<button type="reset" onclick="${'#gname'}.focus();">취소</button>
+			<button type="button" onclick="location='/gongji/gongji_teacher_list?page=${page}';">목록</button>
+			
+			
+		</form>
+	</body>
+</html>

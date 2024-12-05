@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- mybatis mapper DTD문서 정의 태그 -->
+
+<!-- 2024-12-04 문제) 공지사항 만들기 -->
+<mapper namespace="GongjiTeacher">
+	<insert id="gongjiTeacher_save">
+		insert into tbl_gongji_teacher (gno, gname, gtitle, gcont) values(gno_seq_teacher.nextval, ${gname}, ${gtitle}, ${gcont}, sysdate)
+	</insert>
+	
+	<select id="gongji_teacher_count" resultType="int">
+		<!-- 오라클에서 count() 함수는 레코드 개수를 반환한다. -->
+		select count(*) from tbl_board 
+	</select>
+</mapper>

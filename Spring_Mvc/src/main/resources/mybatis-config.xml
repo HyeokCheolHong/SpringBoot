@@ -31,8 +31,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	 	
 	 	<!-- 2024-12-04 문제) 공지사항 만들기 -->
 	 	<typeAlias type="net.daum.vo.GongjiVO" alias="gongji" />
+	 	
+	 	<!-- 2024-12-05 문제) 공지사항 만들기 정답 -->
+	 	<typeAlias type="net.daum.vo.GongjiTeacherVO" alias="gongjiteacher" />
 	</typeAliases>
-	    <!-- 로그 활성화 설정 -->
     
 </configuration>
 

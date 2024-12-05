@@ -1,0 +1,6 @@
+package net.daum.dao;
+
+// 2024-12-05 문제) 공지사항 만들기 정답
+public interface GongjiTeacherDAO {
+
+}

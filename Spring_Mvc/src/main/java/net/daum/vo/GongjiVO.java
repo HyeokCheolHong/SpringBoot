@@ -12,4 +12,7 @@ public class GongjiVO {
 	private String gcont;
 	private int ghit;
 	private String gdate;
+	
+	private int startrow;
+	private int endrow;
 }

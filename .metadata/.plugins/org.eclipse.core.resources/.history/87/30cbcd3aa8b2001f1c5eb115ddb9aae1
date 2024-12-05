@@ -1,0 +1,13 @@
+package net.daum.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import net.daum.dao.GongjiTeacherDAO;
+
+@Service
+public class GongjiServiceImpl implements GongjiService {
+	
+	@Autowired
+	private GongjiTeacherDAO gongjiTeacherDAO;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- mybatis mapper DTD문서 정의 태그 -->
+
+<!-- 2024-12-04 문제) 공지사항 만들기 -->
+<mapper namespace="GongjiTeacher">
+	<insert id="gongjiTeacher_in">
+		insert into tbl_gongji (gno, gname, gtitle, gcont) values(gno_seq.nextval, ${gname}, ${gtitle}, ${gcont}, sysdate)
+	</insert>
+</mapper>

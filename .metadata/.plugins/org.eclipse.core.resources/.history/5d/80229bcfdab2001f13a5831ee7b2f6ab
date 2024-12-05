@@ -1,0 +1,154 @@
+package net.daum.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import jakarta.servlet.http.HttpServletRequest;
+import net.daum.service.GongjiTeacherService;
+import net.daum.vo.BoardVO;
+import net.daum.vo.GongjiTeacherVO;
+
+//2024-12-05 문제) 공지사항 만들기 정답
+
+@Controller
+public class GongjiTeacherController {
+	
+	@Autowired
+	private GongjiTeacherService gongjiTeacherService;
+	
+	// 공지 글쓰기폼
+	@GetMapping("/gongji/gongji_teacher_write")
+	public ModelAndView g_write(HttpServletRequest request) {
+		
+		int page = 1;
+		
+		if(request.getParameter("page") != null) {
+			// get으로 전달된 쪽번호가 있는 경우 실
+			page = Integer.parseInt(request.getParameter("page"));
+			// 쪽번호를 정수숫자로 변경해서 저장
+		}
+		request.setAttribute("page", page);
+		
+		return new ModelAndView("gongji/gongji_teacher_write");
+	} // g_write()
+	
+	// 공지 저장
+	@PostMapping("/gongji/gongji_teacher_write")
+	public String gongji_insert(GongjiTeacherVO g ) {
+		this.gongjiTeacherService.insert(g); // 공지저장
+		return "redirect:/gongji/gongji_teacher_list";
+	} // gongji_insert()
+	
+	// 페이징 공지목록
+	@GetMapping("/gongji/gongji_teacher_list")
+	public void gongji_list(GongjiTeacherVO g, HttpServletRequest request, Model m) {
+
+		int page = 1;
+		// 현재 쪽 번호
+		int limit = 10;
+		// 한페이지에 보여지는 목록개수
+		
+		if(request.getParameter("page") != null) {
+			// get으로 전달된 쪽번호가 있는 경우 실행
+			page = Integer.parseInt(request.getParameter("page"));
+			// 쪽번호를 정수숫자로 변경해서 저장
+		}
+		g.setStartrow((page-1)*10+1);
+		// 시작 행번호
+		g.setEndrow(g.getStartrow()+limit-1);
+		// 끝 행번호
+		
+		// 총 게시물 수
+		int totalCount = this.gongjiTeacherService.getTotalCount();
+//		// 게시물코드 작성이 완료되어 콘솔창에 불필요한 출력코드 주석처리
+//		System.out.println("총 게시물 수 : " + totalCount);
+		
+		// 목록
+		List<GongjiTeacherVO> glist = this.gongjiTeacherService.getGongjiTeacherList(g);
+		// System.out.println("목록개수 : "+glist.size());
+//		// 게시물코드 작성이 완료되어 콘솔창에 불필요한 출력코드 주석처리
+		
+		// 총페이지 수
+		int maxpage = (int)((double)totalCount/limit+0.95);
+		// 현재 페이지에 보여질 시작페이지
+		
+		int startpage = (((int)((double)page/10+0.9))-1)*10+1;
+		// 현재페이지에 보여질 마지막 페이지
+		
+		int endpage = maxpage;
+		
+		if(endpage > startpage+10-1) endpage = startpage+10-1;
+		
+		
+		// totalCount 키에 총 게시물 수를 저장
+		m.addAttribute("totalCount", totalCount);
+		
+		// glist 키에 목록을 저장
+		request.setAttribute("glist", glist);
+		
+		m.addAttribute("startpage", startpage);
+		m.addAttribute("endpage", endpage);
+		m.addAttribute("maxpage", maxpage);
+		m.addAttribute("page", page);
+
+	}
+	
+	@GetMapping("/gongji/gongji_teacher_cont")
+	public ModelAndView getGongjiTeacherView( @RequestParam("bno") int gno, int page) {
+		
+		this.gongjiTeacherService.updateTeacherHit(gno);
+		
+		GongjiTeacherVO gc = this.gongjiTeacherService.getGongjiTeacherCont(gno);
+		
+		String gcont = gc.getGcont().replace("\n", "<br/>");
+		
+		ModelAndView cm = new ModelAndView();
+		cm.addObject("gc", gc);
+		cm.addObject("page", page);
+		cm.addObject("bcont", gcont);
+		
+		cm.setViewName("gongji/gongji_teacher_cont");
+		
+		return cm;
+	}
+	
+	// 게시판 수정 폼 코드 작성
+	@GetMapping("/gongji/gongji_teacher_edit")
+	public void gongji_teacher_edit(Model m, int gno, int page) {
+		// int bno라고 하면 bno파라미터 이름에 저장되어 get으로 전달된 게시판 번호값을 받아온다.
+		
+		
+		GongjiTeacherVO eg = this.gongjiTeacherService.getGongjiTeacherCont(gno);
+		// 조회수가 증가 안되는 번호에 해당하는 DB레코드를 가져온다.
+		
+		m.addAttribute("eg", eg);
+		m.addAttribute("page", page);
+		// 뷰페이지 경로를 설정 하지 않는 이유는 메서드 반환 타입이 void형이면 매핑주소가 뷰페이지 파일명이 된다.
+		// 뷰리졸브 경로(뷰페이지 경로) => /WEB-INF/views/gongji/gongji_teacher_edit.jsp
+
+	};
+	
+	
+	// 게시판 수정 완료 코드
+	@PostMapping("/gongji/gongji_teacher_edit_ok")
+	public String board_edit(GongjiTeacherVO eg, int page, RedirectAttributes rttr) {
+		/*
+		 * GongjiTeacherVO eg라고 하면 빈클래스 변수명과 네임파라미터 이름이 같으면 eg객체에 히든으로 전달된 번호, 수정글쓴이, 수정제목, 수정내용이 저장되어 있다.
+		 * 하지만 히든 page는 GongjiTeacherVO 빈클래스에 변수로 정의되어 있지 않아서 별도로 int page로 가져가야 한다.
+		 */
+		
+		this.gongjiTeacherService.updateTeacherGongji(eg);
+		// 번호를 기준으로 수정
+		
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		return "redirect:/gongji/gongji_teacher_list?page="+page;
+	};
+}
