@@ -1,0 +1,16 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>동기식 방법의 첨부기능</h2>
+		<form method="post" enctype="multipart/form-data">
+			<%-- 파일 첨부된 파일(이진파일)을 binary mode파일이라고 한다. --%>
+			<%-- 파일 첨부를 해서 서버에 업로드 하는 기능을 만들려면 반드시 method 방식을 post로 지정해야 하고 추가적으로 enctype="multipart/form-data" 속성을 지정해야 한다 --%>
+			<%-- 스프링 부트에서 이진파일 업로드 해주는 내장 API가 있다. 그러므로 외부 라이브러리를 셋팅을 하지 않아도 된다. --%>
+		</form>
+	</body>
+</html>

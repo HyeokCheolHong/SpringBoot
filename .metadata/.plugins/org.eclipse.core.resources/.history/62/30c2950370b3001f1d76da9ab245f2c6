@@ -1,0 +1,20 @@
+package net.daum.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+// 2024-12-06 게시판 첨부파일(이진파일) 관련 Upload Code 작성 
+
+@Controller
+@RequestMapping("/bbs")
+public class UploadController {
+	
+	@GetMapping("/uploadForm")
+	public void uploadForm() {
+		// 리턴타입이 없는 void 타입이면 매핑 주소인 /uploadForm View 페이지 파일명으로 설정된다.
+	}
+	
+}

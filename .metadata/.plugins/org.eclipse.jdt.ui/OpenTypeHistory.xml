@@ -7,7 +7,7 @@
     <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{PointDAO.java[PointDAO" modifiers="513" timestamp="1733285603183"/>
     <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{MessageService.java[MessageService" modifiers="513" timestamp="1733278695860"/>
     <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{GongjiService.java[GongjiService" modifiers="513" timestamp="1733362901304"/>
-    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{GongjiTeacherService.java[GongjiTeacherService" modifiers="513" timestamp="1733382718454"/>
-    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{GongjiTeacherDAO.java[GongjiTeacherDAO" modifiers="513" timestamp="1733382299384"/>
+    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{GongjiTeacherService.java[GongjiTeacherService" modifiers="513" timestamp="1733387378721"/>
+    <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{GongjiTeacherDAO.java[GongjiTeacherDAO" modifiers="513" timestamp="1733387403928"/>
     <typeInfo handle="=Spring_Mvc/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{GongjiDAO.java[GongjiDAO" modifiers="513" timestamp="1733363428149"/>
 </typeInfoHistroy>
