@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+<!-- 2024-12-10 thymeLeaf 실습 -->
+	<head>
+		<title>ThymeLeaf 3</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	</head>
+	
+	<body>
+		<table border="1">
+			<tr>
+				<th>MID(회원아이디)</th>
+				<th>MNAME(회원이름)</th>
+				<th>REGDATE(가입날짜)</th>				
+			</tr>
+			<tr th:each="member : ${list}">
+				<th th:text="${member.mid}"></th>
+				<th th:text="${member.mname}"></th>
+				<th th:text="${#dates.format(member.regdate, 'yyyy-MM-dd')}"></th>
+			</tr>
+		</table>
+		
+		<hr/>
+		
+		<table border="1">
+			<tr>
+				<th>COUNT</th>
+				<th>SIZE</th>
+				<th>ODD(홀)/EVEN(짝)</th>
+				<th>MID</th>
+				<th>MANME</th>
+				<th>REGDATE</th>
+			</tr>
+			<tr th:each="member, count2 : ${list}">
+				<!-- index는 0부터 시작하는 인덱스 번호이며, count는 1부터 시작하는 번호, size는 현재 목록 개수(크기), even 짝수라면 true, OOD는 홀수 -->
+				<th th:text="${count2.count}"></th>
+				<th th:text="${count2.size}"></th>
+				<th th:text="${count2.odd + ' ' + count2.even}"></th>
+				<th th:text="${member.mid}"></th>
+				<th th:text="${member.mname}"></th>
+				<th th:text="${#dates.format(member.regdate, 'yyyy-MM-dd')}"></th>
+			</tr>
+		</table>
+	</body>	
+</html>

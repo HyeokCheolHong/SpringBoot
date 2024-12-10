@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+
+<!-- 2024-12-10 thymeLeaf 실습 -->
+
+	<head>
+		<title>TymeLeaf 뷰페이지</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="./css/th.css" />
+ 	</head>
+ 	<body>
+ 		<h1>ThymeLeaf 연습 페이지</h1>
+ 		<h2 class="thymeLeaf_css" th:text="${greeting}"></h2>
+ 		<hr/>
+ 		
+ 		<h3>맛난</h3>
+ 		<!-- src/main/resources/static/templates/thmeLeaf/ 경로로 접근 -->
+ 		<img src="./images01/chestnut.jpg" width="250px" height="180px" alt="알밤" />
+ 		
+ 		<h3>맛난 군고구마</h3>
+ 		<!-- src/main/webapp/ 경로로 접근 -->
+ 		<img src="./images02/sweetpotato.jpg" width="250px" height="180px" alt="군고구마" />
+ 	</body>
+</html>

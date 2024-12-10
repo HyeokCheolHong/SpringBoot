@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeLeaf.org">
+
+	<head>
+		<Title>ThymeLeaf 4</Title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	</head>
+	
+	<body>
+		<table border="1" th:with="target='u0001'">
+		<!-- th:with를 사용해서 특정한 범위내에서만 유효한 지역변수 선언할 수 있다. target이라는 변수 선언
+		table 태그 내에서만 유효한 지역변수 이다. -->
+			<tr>
+				<th>회원아이디(MID)</th>
+				<th>회원이름(MNAME)</th>
+				<th>가입날짜(REGDATE)</th>
+			</tr>
+			
+			<tr th:each="member : ${list}">
+				<th th:text="${member.mid == target ? 'SECRET' : member.mid}" ></th>
+				<th th:text="${member.mname}" ></th>
+				<th th:text="${#dates.format(member.regdate, 'yyyy-MM-dd')}" ></th>
+			</tr>
+		</table>
+		
+		<hr/>
+		
+		<table border="1" th:with="target2='u0001'">
+			<tr>
+				<th>MID</th>
+				<th>MNAME</th>
+				<th>REGDATE</th>
+			</tr>
+			
+			<tr th:each="member : ${list}">
+				<th th:if="${member.mid}">
+					<a href="/modify" th:if="${member.mid == target2}">MODIFY</a>
+					<!-- th:if ~ th:unless 타임리프는 자바의 if~else와 기능이 같다. 회원아이디가 u0001과 같다면 true 실행 -->
+					<p th:unless="${member.mid == target2}">VIEW</p>
+					<!-- 회원아이디가 u0001과 다르다면 false 실행 -->
+				<th th:text="${member.mname}" ></th>
+				<th th:text="${#dates.format(member.regdate, 'yyyy-MM-dd')}" ></th>
+			</tr>
+		</table>
+	</body>
+</html>

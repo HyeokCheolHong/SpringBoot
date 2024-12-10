@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+<!-- 2024-12-10 thymeLeaf 실습 -->
+	<head>
+		<title>ThymeLeaf 2</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	</head>
+	
+	<body>
+		<h1 th:text="${vo}"></h1>
+		<hr/>
+		<div th:utext="${'<h2>' + vo.mid + '</hr>'}"></div>
+		<!-- th:utext속성은 html태그를 적용 -->
+		
+		<div th:text="${'<h2>' + vo.mname + '</h2>'}"></div>
+		<!-- th:text속성은 <를 &lt; 특수문자로 인식하고, >를 &gt;로 각각 인식해서 결과를 그대로 웹상에 출력되어서 html태그가 적용 안됨-->
+	</body>
+</html>

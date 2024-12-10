@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.thymeLeaf_css{
+	width:350px; 
+	height:100px; 
+	display:flex; 
+	justify-content: center; 
+	align-items: center;
+	border:1px solid red;
+	background-color:gold;
+	border-radius: 15px;
+	text-align: center;
+	margin:100px auto auto auto;
+	box-shadow: 10px 10px 10px gray;
+	line-height:100px;
+}

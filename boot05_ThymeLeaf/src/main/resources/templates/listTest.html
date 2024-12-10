@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+<!-- 2024-12-10 thymeLeaf 실습 -->
+	<head>
+		<title>타임리프</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	</head>
+	
+	<body>
+		<h1>ThymeLeaf로 복수개의 리스트 목록 연습</h1>
+		<hr/>
+		
+		<h2 th:text="'Hello '+${name}+'!'"></h2>
+		<hr/>
+		
+		<ul>
+			<li th:each="result: ${list}" th:text="${result}"></li>
+		</ul>
+	</body>
+</html>
