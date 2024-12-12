@@ -1,8 +1,0 @@
-package net.daum.dao;
-
-@Repository
-public class GongjiTeacherDAOImpl implements GongjiTeacherDAO {
-	
-	@Autowired
-	private SqlSession sqlSession
-}

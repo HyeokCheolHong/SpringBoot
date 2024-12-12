@@ -103,7 +103,7 @@
 				}
 			} // 로그인 인증 유효성 검증
 			
-			// 비밀번호 찾기
+			<%-- 비밀번호 찾기 --%>
 			function pwd_find() {
 				let url = 'pwd_find'; // 매핑주소 저장
 				window.open(url, '비번검색', 'windth=400px, height=300px, scrollbars=yes');

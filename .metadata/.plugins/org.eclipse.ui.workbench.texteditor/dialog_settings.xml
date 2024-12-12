@@ -18,8 +18,9 @@
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Invalid"/>
+		<item key="selection" value="비밀번"/>
 		<list key="findhistory">
+			<item value="비밀번"/>
 			<item value="invalid"/>
 			<item value="lom"/>
 			<item value="bo"/>
@@ -27,7 +28,6 @@
 			<item value="개수 카운트 추가 관련 코드 작성 --&gt;"/>
 			<item value="replyer"/>
 			<item value="modal"/>
-			<item value="mybatis"/>
 		</list>
 		<list key="replacehistory">
 		</list>

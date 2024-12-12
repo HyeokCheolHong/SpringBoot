@@ -1,10 +1,13 @@
 package net.daum.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import lombok.extern.java.Log;
 
@@ -14,6 +17,16 @@ import lombok.extern.java.Log;
 @EnableWebSecurity // 스프링 웹 시큐리티로 인식되게함
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+	// 2024-12-12 Spring Security 실습
+	@Bean
+	public PasswordEncoder passwordEncoder() { // 비번 암호화 빈등록
+		return new BCryptPasswordEncoder();
+		// PasswordEncoder 빈등록하고 MemberController 등 다른 클래스에서
+		// @Autowired 자동 의존성 주입해야 에러가 발생하지 않는다.
+	}
+	// 2024-12-12 Spring Security 실습
+	
+	
 	// 스프링 웹 시큐리티 설정을 담당하는 WebSecurityConfigurerAdapter 클래스 상속을 받는다
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
