@@ -1,8 +1,0 @@
-package net.daum.controller;
-
-
-// 2024-12-06 첨부파일(이진파일) 관련 Upload Code 작성 
-
-public class UploadController {
-
-}

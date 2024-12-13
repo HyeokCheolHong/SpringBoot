@@ -1,5 +1,7 @@
 package net.daum.security;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -8,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 import lombok.extern.java.Log;
 
@@ -17,6 +21,14 @@ import lombok.extern.java.Log;
 @EnableWebSecurity // 스프링 웹 시큐리티로 인식되게함
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+	// 2024-12-13 Spring 사용자 인증 실습
+	@Autowired
+	DataSource dataSource; // 커넥션 풀 관리 DataSource
+	
+	@Autowired
+	ZerockUsersService zerockUsersService;
+	// 2024-12-13 Spring 사용자 인증 실습
+	
 	// 2024-12-12 Spring Security 실습
 	@Bean
 	public PasswordEncoder passwordEncoder() { // 비번 암호화 빈등록
@@ -62,24 +74,46 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.logout().logoutUrl("/logout").invalidateHttpSession(true); // 세션 무효화 : 로그아웃
 		// invalidateHttpSession(true) : 세션 무효화
 		
+		// 2024-12-13 Spring 사용자 인증 실습
+		http.rememberMe().key("zerock").userDetailsService(zerockUsersService)
+		// rememberMe()에서 쿠키값을 암호화 해서 전달하므로 암호의 '키(key)'를 조정하여 사용
+		.tokenRepository(getJDBCReposithry())
+		.tokenValiditySeconds(60*60*24);
+		// 쿠키 유효시간을 초단위로 설정 => 60(초)*60(분)*24(시간) 즉 하루동안 쿠키 유효시간 설정
 	}
 	
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+	// 2024-12-13 Spring 사용자 인증 실습
+	private PersistentTokenRepository getJDBCReposithry() {
+		/*
+		 * SecurityConfig에서 rememberMe()를 처리 할 때 JdbcTokenRepositoryImpl를 지정해 주어야 하는데
+		 * 기본적으로 DataSource가 필요하므로 의존석을 주입한다.
+		 */
+		JdbcTokenRepositoryImpl repo = new JdbcTokenRepositoryImpl();
+		repo.setDataSource(dataSource); // 커넥션 풀 의존성 주입
+		return repo;
+	}
+	// 2024-12-13 Spring 사용자 인증 실습
+	
+	
+//	// 2024-12-13 Spring 사용자 인증 실습으로 주석처리
+//	@Autowired
+//	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		// 로그인 되게 만들기 위해서는 AuthenticationMangaerBuilder을 주입해서 인증에 대한 처리를 해야 한다.
 		// 예를들어 메모리상에 정보만을 이용한다든지, jdbc등을 이용해서 인증처리가 가능한다. 
 		// 여기서는 메모리상의 인증 정보를 활용한다.
 		
-		log.info("메모리상의 로그인 인증처리");
+//		// 2024-12-13 Spring 사용자 인증 실습으로 주석처리
+//		log.info("메모리상의 로그인 인증처리");
 		
-		auth.inMemoryAuthentication().withUser("manager").password("{noop}1111").roles("MANAGER");
+//		// 2024-12-13 Spring 사용자 인증 실습으로 주석처리
+//		auth.inMemoryAuthentication().withUser("manager").password("{noop}1111").roles("MANAGER");
 		/*
 		 * 사용자 manager, 비번 1111, 권한 MANAGER로 지정
 		 * Spring Security 4 에서는 메모리 내의 인증을 사용하여 암호를 인코딩 즉 암호화 하지 않고 일반 텍스트로 저장할 수 있었다.
 		 * Spring Security 5 에서는 비번을 인코딩 즉 암호화해서 저장한다. 그러므로 There is no PasswordEncoder mapped for the id "null" 오류를 내지 않기 위해서는
 		 *  {noop}을 사용해서 비번을 인코딩 즉 암호화 해서 처리해야 한다.
 		 */
-	}
+//	}
 	
 	
 

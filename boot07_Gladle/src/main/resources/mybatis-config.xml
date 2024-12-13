@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2024-12-13 Spring Gradle Project 실습 -->
+
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd" > <!-- mybatis DTD 문서 정리 태그 -->
+
+<configuration>
+	<settings>
+        <!-- <setting name="logImpl" value="STDOUT_LOGGING"/> -->
+        <!-- log를 남기는 코드 -->
+        
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+
+	<typeAliases>
+		<!-- 이 파일의 역할은 데이터 저장빈 클래스 객체 별칭이름을 관리한다. -->
+		<typeAlias type="net.daum.vo.GuestBookVO" alias="guestbook"/>
+		<typeAlias type="net.daum.vo.PageVO" alias="page"/>
+	</typeAliases>
+    
+</configuration>
+

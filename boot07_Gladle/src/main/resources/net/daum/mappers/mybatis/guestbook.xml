@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2024-12-13 Spring Gradle Project 실습 -->
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- mybatis mapper DTD문서 정의 태그 -->
+
+
+<mapper namespace="GuestBook">
+	<!-- 방명록 페이징 목록 -->
+	<select id="guest_list" parameterType="page" resultType="guestbook">
+		select * from 
+		(select rowNum rNum, guest_no, guest_name, guest_title, guest_hit, guest_date 
+		from (select * from guestbook order by guest_no desc)) 
+		where rNum &gt;= #{startrow} and rNum &lt;=#{endrow}
+		
+		<!-- &gt; : >, &lt; : < 를 의미 -->
+		<!--
+			ROWNUM 컬럼은 오라클에서 내부적으로 제공하는 컬럼명
+			오라클에서 ROWNUM은 SELECT 쿼리로 가져온 데이터에 대해 일련번호를 부여하는 역할을 하는 가상 컬럼이다 
+			각 행에 대해 1부터 시작하여 1씩 증가하는 숫자를 할당하는 방식으로 작동
+		-->
+	</select>
+</mapper>
