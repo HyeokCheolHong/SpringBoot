@@ -15,5 +15,9 @@ public interface GuestBookDAO {
 
 	List<GuestBookVO> getGuestBookList(PageVO p);
 
+	void updateHit(int gno);
+
+	GuestBookVO getGCont(int gno);
+
 	
 }

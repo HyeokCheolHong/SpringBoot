@@ -15,4 +15,6 @@ public interface GuestBookService {
 
 	List<GuestBookVO> getGuestBookList(PageVO p);
 
+	GuestBookVO getGCont(int gno);
+
 }

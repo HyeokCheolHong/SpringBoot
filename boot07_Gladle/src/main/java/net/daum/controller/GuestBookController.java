@@ -97,4 +97,28 @@ public class GuestBookController {
 		listM.addObject("page", page);
 		return listM;
 	}
+	
+	// 조회수 증가와 내용보기
+	@GetMapping("/guestbook_cont")
+	public ModelAndView guestbook_cont(int gno, int page) {
+		
+		GuestBookVO g = this.guestBookService.getGCont(gno);
+		
+		String guestcont = g.getGuest_cont().replace("\n", "<br/>");
+		// textarea입력필드에서 엔터키를 웹브라우저에서 줄바꿈에서 내용을 보여준다
+		
+		ModelAndView gm = new ModelAndView("guestbook/guestbook_cont");
+		/*
+		 * ModelAndView 생성자 인자값으로 들어간느 값
+		 * 	1. 뷰페이지 경로 => WEB-INF/views/guestbook/guestbook_cont.jsp
+		 * 	2.redirect:/매핑주소 가 들어갈 수 있다.
+		 */
+		
+		gm.addObject("g", g);
+		gm.addObject("guestcont", guestcont);
+		gm.addObject("page", page);
+		return gm;
+	}
+	
+	
 }

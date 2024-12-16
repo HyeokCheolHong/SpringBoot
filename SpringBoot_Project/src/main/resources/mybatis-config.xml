@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd" > <!-- mybatis DTD 문서 정리 태그 -->
+
+<!-- 2024-12-16 Spring Project  -->
+
+<configuration>
+	<settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!-- MyBatis에서 로그를 출력하는 방식을 설정하는 코드  -->
+        
+        <!-- 2024-12-16 스프링 생성 -->
+        <setting name="jdbcTypeForNull" value="NULL" />
+        <!-- MyBatis에서 NULL 값을 데이터베이스에 처리할 때 사용할 JDBC 타입을 지정 -->
+    </settings>
+
+	<typeAliases>
+		<!-- 이파일의 역할은 데이터 저장빈 클래스 객체 별칭이름을 관리한다.-->
+		<typeAlias type="net.daum.vo.BbsVO" alias="bbs"/>
+		<typeAlias type="net.daum.vo.PageVO" alias="page"/>
+	</typeAliases>
+    
+</configuration>
+
