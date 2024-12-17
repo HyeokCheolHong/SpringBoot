@@ -15,4 +15,16 @@ public interface BbsDAO {
 
 	List<BbsVO> getBbslist(PageVO p);
 
+	void updateHit(int bbs_no);
+
+	BbsVO getBbs_cont(int bbs_no);
+
+	void updateLevel(BbsVO rb);
+
+	void replyBbs(BbsVO rb);
+
+	void editBbs(BbsVO bbs);
+
+	void delBbs(int bbs_no);
+
 }

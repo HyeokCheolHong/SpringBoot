@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 <configuration>
 	<settings>
-        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!-- <setting name="logImpl" value="STDOUT_LOGGING"/> -->
         <!-- MyBatis에서 로그를 출력하는 방식을 설정하는 코드  -->
         
         <!-- 2024-12-16 스프링 생성 -->

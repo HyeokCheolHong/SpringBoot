@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.daum.dao.BbsDAO;
 import net.daum.vo.BbsVO;
@@ -33,6 +35,43 @@ public class BbsServiceImpl implements BbsService {
 	@Override
 	public List<BbsVO> getBbsList(PageVO p) {
 		return this.bbsDao.getBbslist(p);
+	}
+	
+	// 조회수 증가+내용보기 => 스프링 AOP를 통한 트랜잭션 적용 대상
+	@Transactional(isolation = Isolation.READ_COMMITTED) // 트랜잭션 격리(트랜잭션이 적용되는 중간에 외부 간섭을 배제)
+	@Override
+	public BbsVO getBbsCont(int bbs_no) {
+		this.bbsDao.updateHit(bbs_no); // 조회수 증가
+		
+		BbsVO bc = this.bbsDao.getBbs_cont(bbs_no);
+		
+		return bc;
+	}
+
+	@Override
+	public BbsVO getBbsCont2(int bbs_no) {
+		// TODO Auto-generated method stub
+		return this.bbsDao.getBbs_cont(bbs_no);
+	}
+
+	
+	// 답변 레벨증가 + 답변 저장 => 스프링의 AOP를 통한 트랜잭션을 적굥
+	@Transactional
+	@Override
+	public void replyBbs(BbsVO rb) {
+		this.bbsDao.updateLevel(rb); // 답변 레벨 증가
+		this.bbsDao.replyBbs(rb); // 답변 저장
+	}
+
+	@Transactional
+	@Override
+	public void editBbs(BbsVO bbs) {
+		this.bbsDao.editBbs(bbs);
+	}
+
+	@Override
+	public void delBbs(int bbs_no) {
+		this.bbsDao.delBbs(bbs_no);
 	}
 
 	

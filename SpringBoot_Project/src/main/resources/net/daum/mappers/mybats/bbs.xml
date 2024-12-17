@@ -50,7 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    			</if>
 		    			
 		    		</where>  	
-		    	order by bbs_ref desc, bbs_lebel asc))
+		    	order by bbs_ref desc, bbs_level asc))
 		    where rNum &gt;= ${startrow} and rNum &lt;= ${endrow}
 		    <!-- &gt;은 > , &lt;은 < -->
     </select>
