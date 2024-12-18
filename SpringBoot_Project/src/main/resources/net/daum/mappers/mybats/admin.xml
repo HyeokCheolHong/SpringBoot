@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2024-12-18 Spring Admin Project 실습 -->
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- mybatis mapper DTD문서 정의 태그 -->
+
+<mapper namespace="Admin">
+	
+	<!-- 관리자 정보 저장 -->
+	<insert id="admin_in" parameterType="admin"> <!-- parameterType은 전달인자 타입이고 생략가능 -->
+		insert into admin (admin_no, admin_id, admin_pwd, admin_name, admin_date) values(#{admin_no}, #{admin_id}, #{admin_pwd}, #{admin_name}, sysdate)	
+	</insert>
+
+	<!-- 관리자 로그인 인증 -->
+	<select id="admin_login" resultType="net.daum.vo.AdminVO">
+		select * from admin where admin_id=#{admin_id}
+	</select>
+</mapper>

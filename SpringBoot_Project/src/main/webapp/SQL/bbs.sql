@@ -1,5 +1,4 @@
--- 2024-12-16 Spring Project 
-
+--bbs.sql =>자료실 테이블 만들기 쿼리문
 create table bbs(
  bbs_no number(38) primary key --게시물번호
  ,bbs_name varchar2(100) not null --작성자
@@ -17,11 +16,11 @@ create table bbs(
 
 select * from bbs order by bbs_no desc;
 
--- bbs_no_seq 시퀀스 생성하기
+--bbs_no_seq 시퀀스 생성하기
 create sequence bbs_no_seq
-start with 1 -- 1부터 시작
+start with 1 -- 1 부터 시작
 increment by 1 -- 1씩 증가
 nocache;
 
--- bbs_no_seq 시퀀스 다음번호값 확인
+--bbs_no_seq 시퀀스 다음번호값 확인
 select bbs_no_seq.nextval as "시퀀스 번호" from dual;
