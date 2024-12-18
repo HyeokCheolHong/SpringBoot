@@ -20,9 +20,11 @@
     <typeInfo handle="=boot07_Gladle/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;net.daum.dao{GuestBookRepository.java[GuestBookRepository" modifiers="513" timestamp="1734075716486"/>
     <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{BbsDAO.java[BbsDAO" modifiers="513" timestamp="1734424198249"/>
     <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{BbsService.java[BbsService" modifiers="513" timestamp="1734424175152"/>
-    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{AdminDAO.java[AdminDAO" modifiers="513" timestamp="1734482944198"/>
-    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{AdminService.java[AdminService" modifiers="513" timestamp="1734483124809"/>
+    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{AdminDAO.java[AdminDAO" modifiers="513" timestamp="1734488893786"/>
+    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{AdminService.java[AdminService" modifiers="513" timestamp="1734488866417"/>
+    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{AdminBbsDAO.java[AdminBbsDAO" modifiers="513" timestamp="1734500134566"/>
+    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{AdminBbsService.java[AdminBbsService" modifiers="513" timestamp="1734500111441"/>
     <typeInfo handle="=SpringBoot_Project/C:\/Users\/hor52\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.7.5\/spring-data-jpa-2.7.5.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.7.5=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1733890278233"/>
-    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{AdminBbsDAO.java[AdminBbsDAO" modifiers="513" timestamp="1734497212561"/>
-    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{AdminBbsService.java[AdminBbsService" modifiers="513" timestamp="1734497425968"/>
+    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{ReactDAO.java[ReactDAO" modifiers="513" timestamp="1734508066046"/>
+    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{ReactService.java[ReactService" modifiers="513" timestamp="1734508132783"/>
 </typeInfoHistroy>

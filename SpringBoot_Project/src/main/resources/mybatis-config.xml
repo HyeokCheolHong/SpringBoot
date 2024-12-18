@@ -23,6 +23,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		
 		<!-- 2024-12-18 Spring Admin Project 실습 -->
 		<typeAlias type="net.daum.vo.AdminVO" alias="admin"/>
+		
+		<!-- 2024-12-18 React-Spring 연결 게시판 실습 -->
+		<typeAlias type="net.daum.vo.BoardFormDataVO" alias="boardData"/>
 	</typeAliases>
     
 </configuration>
