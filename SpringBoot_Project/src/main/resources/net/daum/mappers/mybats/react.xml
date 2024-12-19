@@ -7,5 +7,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 2024-12-18 React-Spring 연결 게시판 실습  -->
 
 <mapper namespace="React">
-	
+	<!-- 리액트 게시판 목록 -->
+ <select id="react_list" resultType="boardData">
+    select * from board_form_data order by no desc
+ </select>
 </mapper>

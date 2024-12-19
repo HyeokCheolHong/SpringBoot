@@ -25,6 +25,6 @@
     <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{AdminBbsDAO.java[AdminBbsDAO" modifiers="513" timestamp="1734500134566"/>
     <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{AdminBbsService.java[AdminBbsService" modifiers="513" timestamp="1734500111441"/>
     <typeInfo handle="=SpringBoot_Project/C:\/Users\/hor52\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.7.5\/spring-data-jpa-2.7.5.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.7.5=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1733890278233"/>
-    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{ReactDAO.java[ReactDAO" modifiers="513" timestamp="1734508066046"/>
-    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{ReactService.java[ReactService" modifiers="513" timestamp="1734508132783"/>
+    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.dao{ReactDAO.java[ReactDAO" modifiers="513" timestamp="1734574947337"/>
+    <typeInfo handle="=SpringBoot_Project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.service{ReactService.java[ReactService" modifiers="513" timestamp="1734574757973"/>
 </typeInfoHistroy>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.daum.dao.AdminBbsDAO;
 import net.daum.vo.BbsVO;
@@ -25,6 +26,28 @@ public class AdminBbsServiceImpl implements AdminBbsService {
 	@Override
 	public List<BbsVO> getBbsList(PageVO p) {
 		return this.adminBbsDao.getBbsList(p);
+	}
+
+	@Override
+	public void insertBbs(BbsVO bbs) {
+		this.adminBbsDao.insertBbs(bbs);
+	}
+
+	@Override
+	public BbsVO getAdminBbsCont(int no) {
+		return this.adminBbsDao.getAdminBbsCont(no);
+	}
+
+	@Transactional
+	@Override
+	public void adminUpdateBbs(BbsVO bbs) {
+		this.adminBbsDao.adminUpdateBbs(bbs);
+	}
+
+	@Transactional
+	@Override
+	public void adminBbsDel(int no) {
+		this.adminBbsDao.adminDeleteBbs(no);
 	}
 	
 	

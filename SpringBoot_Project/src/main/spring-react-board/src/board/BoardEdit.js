@@ -17,7 +17,7 @@ const BoardEdit = () => {
 
   useEffect(() => {
     // Fetch post data using no
-    fetch(`http://localhost:8063/board_FormData_cont/${no}`)
+    fetch(`http://localhost:8068/board_FormData_cont/${no}`)
       .then((response) => response.json())
       .then((data) => {
         setName(data.name);
@@ -55,7 +55,7 @@ const BoardEdit = () => {
       return;
     }
 
-    fetch(`http://localhost:8063/board_FormData_Edit/${no}`, {
+    fetch(`http://localhost:8068/board_FormData_Edit/${no}`, {
       //서버 매핑주소
       method: "PUT", //보내는 방식
       headers: {

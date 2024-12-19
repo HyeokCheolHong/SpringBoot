@@ -45,4 +45,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    where rNum &gt;= ${startrow} and rNum &lt;= ${endrow}
 		    <!-- &gt;은 > , &lt;은 < -->
 	</select>		
+	
+	<!-- 관리자 자료실 저장 -->
+   <insert id="abbs_in">
+       insert into bbs (bbs_no,bbs_name,bbs_title,bbs_pwd,bbs_cont,bbs_file,bbs_hit,bbs_ref,bbs_step,
+       bbs_level,bbs_date) values(bbs_no_seq.nextval, #{bbs_name}, #{bbs_title}, #{bbs_pwd},
+       #{bbs_cont}, #{bbs_file}, 0, bbs_no_seq.nextval, 0,0,sysdate)
+   </insert>
+	
+	<!-- 관리자 자료실 상세정보와 수정폼 -->
+	<select id="abbs_cont" parameterType="int" resultType="bbs">
+		select * from bbs where bbs_no=#{no}
+	</select>
+	
+	<!-- 관리자 자료실 수정 -->
+	<update id="abbs_edit">
+		update bbs set bbs_name=#{bbs_name}, bbs_title=#{bbs_title}, bbs_cont=#{bbs_cont}, bbs_file=#{bbs_file} where bbs_no=#{bbs_no}
+	</update>
 </mapper>

@@ -13,4 +13,12 @@ public interface AdminBbsDAO {
 
 	List<BbsVO> getBbsList(PageVO p);
 
+	void insertBbs(BbsVO bbs);
+
+	BbsVO getAdminBbsCont(int no);
+
+	void adminUpdateBbs(BbsVO bbs);
+
+	void adminDeleteBbs(int no);
+
 }

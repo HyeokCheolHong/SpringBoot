@@ -18,7 +18,7 @@ function BoardListPaging() {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8063/board_FormData_List"
+          "http://localhost:8068/board_FormData_List"
         );
 
         // 서버로부터 받은 데이터의 등록일을 대한민국 시간대로 변환

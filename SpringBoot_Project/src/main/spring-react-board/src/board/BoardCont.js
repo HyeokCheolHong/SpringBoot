@@ -11,7 +11,7 @@ function BoardCont() {
     const fetchPost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8063/board_FormData_cont/${no}`
+          `http://localhost:8068/board_FormData_cont/${no}`
           //"http://localhost:8053/board_FormData_cont/75"
         );
         setBoard(response.data);
@@ -30,7 +30,7 @@ function BoardCont() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8063/board_FormData_Del/${no}`);
+      await axios.delete(`http://localhost:8068/board_FormData_Del/${no}`);
       console.log("Post deleted successfully");
       // 삭제가 완료되면 어떤 작업을 수행할지 여기에 추가할 수 있습니다.
 
